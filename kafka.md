@@ -3,10 +3,10 @@ LinkedIn 에서 개발된 Distributed Messaging System
 producer, broker, consumer로 구성
 
 - 분산/복제 구성을 손쉽게 할 수 있다.
-- 기존 메세징 시스템  -저장->  메모리
-- kafka  -저장->  파일시스템
+- 기존 메세징 시스템  -저장->  메모리,<br />
+  kafka  -저장->  파일시스템
 - 다수메시지 : batch형태 -> brokcer
-> 한번에 전달,
+> 한번에 전달,<br />
   TCP/IP 라운드 트립 횟수를 줄일 수 있다.
 - _producer_ 는 broker 에게 _data를 기록_
 - _consumer_ 는 broker 로 부터 _data를 읽음_

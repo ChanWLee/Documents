@@ -66,24 +66,18 @@ _ _ _
 
 
 ### forever package 설치
-node.js를 실행하다 보면 서버로 백그라운드에서 실행을 하는데도 터미널을 닫으면 프로세스가 종료가 되는 현상이 있었다.
-
+node.js를 실행하다 보면 서버로 백그라운드에서 실행을 하는데도 터미널을 닫으면 프로세스가 종료가 되는 현상이 있었다.<br />
 `$ node test.js &`
 
-그래서 설치하는 package가 forever
-
+그래서 설치하는 package가 forever<br />
 `$ npm install forever -g`
 
-// test.js 실행
-
+// test.js 실행<br />
 `$ forever start test.js`
 
-// 실행 된 node.js 프로세스 리스트 확인
-
+// 실행 된 node.js 프로세스 리스트 확인<br />
 `$ forever list`
 
-// 실행 된 node.js 프로세스 정지
-
-`$ forever stop 프로세스번호`
-
+// 실행 된 node.js 프로세스 정지<br />
+`$ forever stop 프로세스번호`<br />
 `$ forever stopall`
