@@ -23,7 +23,7 @@
 
 1. remote로 push<br />
 `$ git push bit master`
-	> Username: 입력
+	> Username: 입력<br />
     Password: 입력
 
 1. remote 상태보기<br />
