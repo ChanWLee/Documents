@@ -86,14 +86,14 @@ Multi SSH keys 셋팅
 ## IntelliJ 에 SSH key 적용
 
 1. VCS > Checkout from Version Control > Git
-    >Git Repository URL:  `github.com-jexchan:jexchan/repo`
+> Git Repository URL:  `github.com-jexchan:jexchan/repo`
 ```
 github.com-jexchan: config에서 설정한 Host
 jexchan: github의 id
 repo: repository 이름
 ```
-    Parent Directory: `/User/workspace`<br />
-    Directory Name: `repo`
+ Parent Directory: `/User/workspace`<br />
+ Directory Name: `repo`
 
 1. Test 클릭
 
