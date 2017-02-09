@@ -86,6 +86,7 @@ Multi SSH keys 셋팅
 ## IntelliJ 에 SSH key 적용
 
 1. VCS > Checkout from Version Control > Git
+
 > Git Repository URL:  `github.com-jexchan:jexchan/repo`
 ```
 github.com-jexchan: config에서 설정한 Host
