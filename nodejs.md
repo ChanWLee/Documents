@@ -33,7 +33,7 @@ http.createServer(function(req,res){
 $ node test.js &
 $ vi mongoTest.js
 ```
-```vi
+```shell
 var MongoClient = require('mongodb').MongoClient;
 var url = 'mongodb://localhost/test';
 function callback(err,db){

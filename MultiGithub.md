@@ -5,39 +5,34 @@
 
 1. git bash에서 실행
 1. 아래 명령 입력, 이메일은 수정
-```
+```bash
 $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 1. 엔터 클릭
-```
+```bash
 Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
 ```
 1. SSH 암호 입력, 암호입력없이 하려면 엔터
-```
+```bash
 Enter passphrase (empty for no passphrase): [Type a passphrase]
 Enter same passphrase again: [Type passphrase again]
 ```
 1. ssh key 클립보드에 복사
-```
+```bash
 $ clip < ~/.ssh/id_rsa.pub
 ```
 
 ## 발급한 SSH key를 ssh-agent에 등록
 
-1. ssh-agent 시작하기
+1. ssh-agent 시작하기<br />
 `# start the ssh-agent in the background`
-> Git Bash
-```
-    $ eval "$(ssh-agent -s)"
-```
-> 다른 terminal
-```
-	$ eval $(ssh-agent -s)
-```
-1. SSH key를 ssh-agent에 추가
-```
-	$ ssh-add ~/.ssh/id_rsa
-```
+> Git Bash<br />
+`$ eval "$(ssh-agent -s)"`<br />
+ 다른 terminal<br />
+`$ eval $(ssh-agent -s)`
+
+1. SSH key를 ssh-agent에 추가<br />
+`$ ssh-add ~/.ssh/id_rsa`
 
 
 ## GitHub 계정에 SSH key 등록
@@ -63,20 +58,18 @@ Multi SSH keys 셋팅
 ---
 1. 위의 방법으로 여러개의 키를 생성, ssh-agent에 추가
 
-2. 저장된 keys 확인
-```
-	$ ssh-add -l
-```
+2. 저장된 keys 확인<br />
+`$ ssh-add -l`
 
 1. ssh config 수정
-```
+```bash
     $ cd ~/.ssh/
     $ touch config
     $ vi config
 ```
 
 1. 내용추가
-```
+```shell
     #activehacker GitHub계정ID
     Host github.com-activehacker
         HostName github.com
