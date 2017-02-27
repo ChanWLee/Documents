@@ -4,68 +4,69 @@
   $ docker run -i -t --name hadoop ubuntu:latest
   ```
   1. 컨테이너 안에서 실행
-  ```shell
-  $ apt-get update
-  $ apt-get install openjdk-8-jdk
-  $ java -version
-  ```
-  1. wget, vim 설치
-  ```shell
-  $ apt-get install wget
-  $ apt-get install vim
-  ```
-  1. etc/hadoop/hadoop-env.sh 수정
-  ```shell
-  export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
-  export HADOOP_HOME="/root/hadoop-2.7.3"
-  ```
-  1. etc/hadoop/core-site.xml 수정
-  ```xml
-  <configuration>
-    <property>
-        <name>fs.defaultFS</name>
-        <value>hdfs://localhost:9000</value>
-    </property>
-    <property>
-        <name>hadoop.tmp.dir</name>
-        <value>/root/hadoop-2.7.3/tmp</value>
-    </property>
-  </configuration>
-  ```
-  1. etc/hadoop/hdfs-site.xml 수정
-  ```xml
-  <configuration>
-    <property>
-        <name>dfs.replication</name>
-        <value>1</value>
-    </property>
-  </configuration>
-  ```
-  1. etc/hadoop/yarn-site.xml 수정 (yarn 을 위한 설정)
-  ```xml
-  <configuration>
-    <property>
-        <name>yarn.nodemanager.aux-services</name>
-        <value>mapreduce_shuffle</value>
-    </property>
-  </configuration>
-  ```
-  1. 다른 노드에 연결하기 위한 ssh 설치
-  ```shell
-  $ apt-get install ssh
-  ```
-  1. ssh 를 위한 키파일 생성
-  ```shell
-  $ cd ~/
-  $ ssh-keygen -t rsa -P '' -f ~/.ssh/id_dsa
-  $ cd .ssh
-  $ cat id_dsa.pub >> authorized_keys
-  ```
-  1. namenode 포맷
-  ```shell
-  $ bin/hadoop namenode -format
-  ```
-  1. `Ctrl + P + Q` 로 컨테이너에서 이탈
+    1. jdk 설치
+    ```shell
+    $ apt-get update
+    $ apt-get install openjdk-8-jdk
+    $ java -version
+    ```
+    1. wget, vim 설치
+    ```shell
+    $ apt-get install wget
+    $ apt-get install vim
+    ```
+    1. etc/hadoop/hadoop-env.sh 수정
+    ```shell
+    export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+    export HADOOP_HOME="/root/hadoop-2.7.3"
+    ```
+    1. etc/hadoop/core-site.xml 수정
+    ```xml
+    <configuration>
+      <property>
+          <name>fs.defaultFS</name>
+          <value>hdfs://localhost:9000</value>
+      </property>
+      <property>
+          <name>hadoop.tmp.dir</name>
+          <value>/root/hadoop-2.7.3/tmp</value>
+      </property>
+    </configuration>
+    ```
+    1. etc/hadoop/hdfs-site.xml 수정
+    ```xml
+    <configuration>
+      <property>
+          <name>dfs.replication</name>
+          <value>1</value>
+      </property>
+    </configuration>
+    ```
+    1. etc/hadoop/yarn-site.xml 수정 (yarn 을 위한 설정)
+    ```xml
+    <configuration>
+      <property>
+          <name>yarn.nodemanager.aux-services</name>
+          <value>mapreduce_shuffle</value>
+      </property>
+    </configuration>
+    ```
+    1. 다른 노드에 연결하기 위한 ssh 설치
+    ```shell
+    $ apt-get install ssh
+    ```
+    1. ssh 를 위한 키파일 생성
+    ```shell
+    $ cd ~/
+    $ ssh-keygen -t rsa -P '' -f ~/.ssh/id_dsa
+    $ cd .ssh
+    $ cat id_dsa.pub >> authorized_keys
+    ```
+    1. namenode 포맷
+    ```shell
+    $ bin/hadoop namenode -format
+    ```
+    1. `Ctrl + P + Q` 로 컨테이너에서 이탈
   1. 지금까지 작업한 컨테이너를 이미지로 commit
   ```shell
   $ docker commit hadoop dockerhubid/hadoop:0.1
