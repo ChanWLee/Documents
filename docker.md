@@ -21,7 +21,6 @@ $ docker run -i -t --name hello ubuntu
 ```shell
 $ docker run -d -p 80:80 -v /root/data:/data --name hello-nginx hello:0.1
 ```
-
 > -i : interactive<br/>
 -t : Rseudo-tty<br/>
 -i -t : bash shell 로 접속<br/>
@@ -60,11 +59,10 @@ $ docker rmi ubuntu:latest
 ```
 
 * 컨테이너가 실행되면서 바뀐 내용 출력
-> Add, Change, Delete
-
 ```shell
 $ docker diff hello
 ```
+> Add, Change, Delete
 
 * 이미지 생성
 ```shell
