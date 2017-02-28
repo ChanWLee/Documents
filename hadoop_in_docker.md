@@ -19,6 +19,7 @@
     ```shell
     export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
     export HADOOP_HOME="/root/hadoop-2.7.3"
+    export HADOOP_BIN_DIR="/root/hadoop-2.7.3/bin"
     ```
     1. etc/hadoop/core-site.xml 수정
     ```xml
