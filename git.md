@@ -2,7 +2,7 @@
 
 ## repository로 push하기 - step by step
 
-1. 초기화<br />
+* 초기화<br />
 `$ git init`
 
 1. 파일등록<br />
