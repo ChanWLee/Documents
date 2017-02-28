@@ -8,6 +8,12 @@
 
 ## docker 에 하둡설치 / 기본셋팅
   link: [haddop in docker](hadoop_in_docker.md)
+#### gobblin에서 hadoop 2.3.0 이 필요함
+아래 환경 변수 셋팅할 때 `HADOOP_BIN_DIR` 를 `2.3.0/bin`으로 셋팅
+```shell
+$ wget https://archive.apache.org/dist/hadoop/core/hadoop-2.3.0/hadoop-2.3.0.tar.gz
+$ tar -xzf hadoop-2.3.0.tar.gz
+```
 ## 컨테이너 내부 설치/셋팅/실행
 #### 설치
   1. kafka 설치
@@ -36,7 +42,7 @@
   export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
   export GOBBLIN_WORK_DIR=/home/gobblin-dist/working-dir
   export HADOOP_HOME=/home/hadoop-2.7.3
-  export HADOOP_BIN_DIR=/home/hadoop-2.7.3/bin
+  export HADOOP_BIN_DIR=/home/hadoop-2.3.0/bin
   ```
 ---
 #### 실행
@@ -58,15 +64,15 @@
   1. zookeeper 실행
   ```shell
   $ cd /home/kafka_2.11-0.10.0.1
-  $ bin/zookeeper-server-start.sh config/zookeeper.property
+  $ bin/zookeeper-server-start.sh config/zookeeper.properties
   ```
   1. kafka 실행
   ```shell
   $ cd /home/kafka_2.11-0.10.0.1
-  $ bin/kafka-server-start.sh config/server.property
+  $ bin/kafka-server-start.sh config/server.properties
   ```
   1. gobblin 실행
   ```shell
   $ cd /home/gobblin-dist
-  $ bin/gobblin-mapreduce.sh --conf job-config-bpu/wikipedia.pull
+  $ bin/gobblin-mapreduce.sh --conf job-config-bpu/wikipedia.pull --workdir working-dir
   ```
