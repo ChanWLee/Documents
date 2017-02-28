@@ -7,3 +7,4 @@
 * [Node.js](nodejs.md)
 * [Docker](docker.md)
   * [Hadoop](hadoop_in_docker.md)
+  * [Gobblin with Hadoop](hadoopNgobblinINdocker.md)
