@@ -14,6 +14,8 @@
 $ wget https://archive.apache.org/dist/hadoop/core/hadoop-2.3.0/hadoop-2.3.0.tar.gz
 $ tar -xzf hadoop-2.3.0.tar.gz
 ```
+---
+
 ## 컨테이너 내부 설치/셋팅/실행
 #### 설치
   1. kafka 설치
@@ -75,4 +77,53 @@ $ tar -xzf hadoop-2.3.0.tar.gz
   ```shell
   $ cd /home/gobblin-dist
   $ bin/gobblin-mapreduce.sh --conf job-config-bpu/wikipedia.pull --workdir working-dir
+  ```
+---
+#### master, slave1, slave2 구성
+  1. 각 docker 실행
+  ```shell
+  $ docker run -i -t -h master --name master -p 50070:50070 dockerhubid/hadoop:0.1
+  $ docker run -i -t -h slave1 --name slave1 --link master:master dockerhubid/hadoop:0.1
+  $ docker run -i -t -h slave2 --name slave2 --link master:master dockerhubid/hadoop:0.1
+  ```
+  1. slave1, 2 의 virtual IP를 확인
+  <br/>보통 `172.17.0.xxx` 형태를 띈다.
+  1. master 에서 hosts, slaves 파일을 수정
+  ```shell
+  $ docker attach master
+  $ vi /etc/hosts
+  ```
+  ```
+  172.17.0.3 slave1
+  172.17.0.4 slave2
+  ```
+  ```shell
+  $ vi hadoop-2.3.0/etc/hadoop/slaves
+  ```
+  ```
+  slave1
+  slave2
+  master
+  ```
+  ```shell
+  $ hadoop-2.3.0/sbin/start-all.sh
+  ```
+  ```shell
+  namenode, datanode 연결 관련된 질문
+  yes 엔터
+  yes 엔터
+  yes 엔터
+  yes 엔터
+  ...
+  ```
+  ###### slave 컨테이너에 접속해, `$ jps`로 slave에 nodemanager, datanode가 돌아가는지 확인
+  ###### master 에서 확인하는 방법
+  ```shell
+  $ hadoop-2.3.0/bin/hadoop dfsadmin -report
+  ```
+  datanode가 총 3개 돌아가고 있는지 확인
+  ```shell
+  ...
+  Live datanodes (3) :
+  ...
   ```
