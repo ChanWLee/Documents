@@ -21,9 +21,9 @@ $ docker run -i -t --name hello ubuntu
 ```shell
 $ docker run -d -p 80:80 -v /root/data:/data --name hello-nginx hello:0.1
 ```
-> -i : interactive<br/>
+> -i : interactive, 컨테이너와 상호적으로 주고받겠다.<br/>
 -t : Rseudo-tty<br/>
--i -t : bash shell 로 접속<br/>
+-i -t : 터미널 환경 조성<br/>
 -d : 백그라운드 실행<br/>
 -p 80:80 : port 연결, 앞이 host, 뒤가 컨테이너<br/>
 -v /root/data:/data : 디렉토리 연결, 앞이 host, 뒤가 컨테이너<br/>
