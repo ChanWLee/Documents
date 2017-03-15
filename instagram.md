@@ -3,9 +3,9 @@
 accessToken 받기위한 코드, 한번 accessToken 받으면 재사용 불가능
 - 최소설정:  https://api.instagram.com/oauth/authorize/?client_id=CLIENT_ID&redirect_uri=REDIRECT_URI&response_type=code
 > - REDIRECT_URI : http://127.0.0.1 가능
-  - CLIENT_ID : instagram 에서 발급받은 ID
-  - scope=likes+public_content : 추가적으로 scope에 대한 내용을 넣어서 accessToken을 받을 수 있다. scope는 따로 권한을 승인받아야 하기에 accessToken만 받을 때는 빼고 진행한다.
-  - 예시: https://api.instagram.com/oauth/authorize/?client_id=1234567890&redirect_uri=http://127.0.0.1&response_type=code
+> - CLIENT_ID : instagram 에서 발급받은 ID
+> - scope=likes+public_content : 추가적으로 scope에 대한 내용을 넣어서 accessToken을 받을 수 있다. scope는 따로 권한을 승인받아야 하기에 accessToken만 받을 때는 빼고 진행한다.
+> - 예시: https://api.instagram.com/oauth/authorize/?client_id=1234567890&redirect_uri=http://127.0.0.1&response_type=code
 
 ##### auth 코드 받기
 브라우저 창이 리다이렉트 되면, 아래와 같은 코드를 확인할 수 있다.<br/>
