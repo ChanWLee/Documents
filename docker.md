@@ -26,7 +26,7 @@ $ docker run -d -p 80:80 -v /root/data:/data --name hello-nginx hello:0.1
 -i -t : 터미널 환경 조성<br/>
 -d : 백그라운드 실행<br/>
 -p 80:80 : port 연결, 앞이 host, 뒤가 컨테이너<br/>
--v /root/data:/data : 디렉토리 연결, 앞이 host, 뒤가 컨테이너<br/>
+-v /root/data:/data : 디렉토리 연결, <host디렉토리>:<컨테이너디렉토리><br/>
 --name (컨테이너 이름 지정) (image 이름)<br/>
 --link <컨테이너 이름>:<별칭>
 
