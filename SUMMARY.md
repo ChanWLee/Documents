@@ -3,6 +3,7 @@
 * [Introduction](README.md)
 * [Git](git.md)
   * [SSH key & multi GitHub & IntelliJ](MultiGithub.md)
+  * [Git move another repository](gitMove.md)
 * [Kafka](kafka.md)
 * [Node.js](nodejs.md)
 * [Docker](docker.md)
