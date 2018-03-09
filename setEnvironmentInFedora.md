@@ -92,6 +92,12 @@ $ bin/idea.sh
 
 - change view : Ctrl + ` > 4 > 2
 
+#### keymap
+
+- window > editor tabs > close
+
+  - `Ctrl + w`
+
 ## 용량 삭제
 
 ### clean PackageKit cache
