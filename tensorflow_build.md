@@ -19,6 +19,7 @@ $ git clone https://github.com/tensorflow/tensorflow
 $ cd tensorflow
 $ git checkout r1.6
 $ ./configure
+# 전부 엔터
 ```
 
 ### bazel build
