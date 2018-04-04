@@ -16,6 +16,7 @@
   - [Hadoop](hadoop_in_docker.md)
   - [Gobblin with Hadoop](hadoopNgobbinINdocker.md)
   - [Tensorflow Serving via Docker](serving_via_docker.md)
+  - [Upgrade Docker in fedora](upgrade_docker.md)
 
 - [API](instagram.md)
 
